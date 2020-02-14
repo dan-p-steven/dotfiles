@@ -2,11 +2,11 @@ execute pathogen#infect()
 filetype plugin indent on
 
 set autoread
-set ruler
 
 set number
 set ignorecase
 set wildmenu
+set ruler
 
 set lazyredraw
 set showmatch
