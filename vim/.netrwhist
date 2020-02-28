@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/stevenda/documents/logs'
+let g:netrw_dirhist_4='/home/stevenda/.config/ncmpcpp'
+let g:netrw_dirhist_3='/etc/X11/xinit'
+let g:netrw_dirhist_2='/etc/modprobe.d'
+let g:netrw_dirhist_1='/home/stevenda/.config/i3'
