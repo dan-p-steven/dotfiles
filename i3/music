@@ -1,0 +1,6 @@
+#! /bin/bash
+COUNT=$(mpc | wc -l)
+if [ "$COUNT" -gt "1" ]; then
+    OUT=$(mpc -f "[[%artist% - ]%title%]]|[%file%]" | head -n 1)
+    echo " $OUT "
+fi

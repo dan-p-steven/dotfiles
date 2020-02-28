@@ -1,0 +1,4 @@
+#! /bin/bash
+
+pkill -RTMIN+13 i3blocks
+

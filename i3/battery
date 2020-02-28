@@ -1,0 +1,33 @@
+#!/bin/bash
+
+BAT=$(acpi | sed -n 1p)
+
+# The battery someitmes glitches when charging, showing two batteries.
+# In this case it seems to be the second battery that shows the real
+# output.
+
+#BAT=$(acpi | sed -n 2p)
+
+STATE=$(echo $BAT | sed 's/Battery 0: //;s/,.*//')
+PERC=$(echo $BAT | sed 's/%.*//;s/.*, //')
+
+case $STATE in
+	Discharging)
+		ICON=
+        CHRG=false;;
+	Charging)
+		ICON=
+		CHRG=true;;
+	Unknown)
+		ICON=
+        CHRG=false;;
+	Full)
+		ICON=
+        CHRG=true;;
+esac
+
+if [ "$CHRG" = true ]; then
+    echo "<span color='#ffbf00'>$ICON</span> $PERC"
+else
+    echo "<span color='#3e3e40'>$ICON</span> $PERC"
+fi

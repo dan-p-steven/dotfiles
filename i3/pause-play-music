@@ -1,0 +1,4 @@
+#! /bin/bash
+
+STATE=$(mpc | grep -n 2 | sed 's/2:\[//;s/\].*$//')
+[[ "$STATE" = "paused" ]] && mpc play || mpc pause

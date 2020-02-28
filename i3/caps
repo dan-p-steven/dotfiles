@@ -1,0 +1,5 @@
+#! /bin/bash
+
+IND=$(xset -q | sed -n 4p | grep 'Caps Lock:   off')
+[[ -z $IND ]] && echo "<span color='#080808' background='#ffbf00'>CAPS</span>"\
+|| echo "<span color='#3e3e40'>CAPS</span>"

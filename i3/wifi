@@ -1,0 +1,9 @@
+#! /bin/bash
+
+case $BLOCK_BUTTON in
+    1) $TERM -e nmcli & disown ;;
+esac
+
+INTERFACE="${BLOCK_INSTANCE:-wlp3s0}"
+ON=$(iwgetid | sed "s/^.*ESSID:\"\(.*\)\"/\1/g")
+[[ -z $ON ]] && echo "<span color='#3e3e40'>睊</span>" || echo "直 $ON (<span color='#30bfa7'>$(curl ifconfig.me)</span>)"
